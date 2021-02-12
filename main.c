@@ -5,7 +5,8 @@
 {   int balance
 ;   int taxis
 ;   
-}; 
+}
+; 
 
     struct player pla = {100, 5} // Player
 ;   int m = 10          // How much taxi's give
@@ -13,7 +14,7 @@
 ;   int getin(void)     // Get input
 ;
 
-    int getin(void)          // Get input
+    int getin(void)      // Get input
 {   unsigned char x     // x?
 ;   scanf("%c", &x)    // Getchar is overrated
 ;   getchar()         // Fixes not being able to use scanf twice
@@ -27,14 +28,14 @@
 ;   printf(GRN " Taxis: %d\n", pla.taxis)  
 ;   printf(GRN " Current Profit: %d\n", profit)
 ;   // menu
-;   printf(RED " [1] End day\n [2] Upgrade Taxi's\n [3] Buy Taxi\n")
+;   printf(BRED " [1] End day\n [2] Upgrade Taxi's\n [3] Buy Taxi\n")
 ;   int x = getin()
 ;   if (x == 49) // 49 = "1"
 {       pla.balance = pla.balance + profit // Add money to player balance
 ;       game()
-;   
+;   // upgrade
 }   else if (x == 50)
-{       printf(BGRN "upgrade for $100?\n [1] Y [2] N\n" RED)
+{       printf(BGRN "upgrade for $100?\n [1] Y [2] N\n" RED) 
 ;       int y = getin()
 ;       if (y == 49)
 {           if (pla.balance >= 100)
@@ -46,12 +47,11 @@
 {               printf(BRED "Not enough money!\n")
 ;               game()
 ;
-}
-;          
+}        
 }       else 
 {           game()
 ;
-}  
+}   // buy taxi
 }   else if (x == 51)
 {       int cost = 1000 * pla.taxis    
 ;       printf(BGRN "Buy taxi for %d?\n [1] Y [2] N\n", cost)
@@ -72,7 +72,8 @@
 ;
 }
 }
-};
+}
+;
 
     int main(void)  // main
 {   game()
